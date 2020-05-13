@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 
-function App() {
+function App() { //top level component
   return (
     <div className="App">
       <p>
