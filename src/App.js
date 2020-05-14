@@ -22,11 +22,17 @@ function App() { //top level component
     .then(response => {
       setData(response.data)
     })
-    .catch()
+    .catch(err => console.error(err))
 
-  },[]) 
+  },[]);
 
-  console.log(data)
+  if(!data){
+
+    return <h2>Waiting for data...</h2>
+
+  }
+
+  //console.log(data)
 
   return (
     <div className="App">

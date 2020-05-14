@@ -7,13 +7,11 @@ import Details from "./details/details";
 
 const Apod = props => {
 
-    //console.log(data)
-
     return (
         
         <div className="apod">
 
-            <img src={props.data}/> {/*src={props.data.src ??? */}
+            <img src={props.data.url}/> {/*src={props.data.src ??? */}
 
         <Details />
 
