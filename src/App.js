@@ -47,7 +47,7 @@ function App() { //top level component
 
   }
 
-  //console.log(data)
+  console.log(data)
 
   return (
     <div className="App">

@@ -5,7 +5,7 @@ const Details = props => {
 
     return (
         
-        <div id="details"></div>
+        <div id="details">{props.data.explanation}</div>
 
     );
 

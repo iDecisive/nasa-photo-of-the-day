@@ -11,9 +11,9 @@ const Apod = props => {
         
         <div className="apod">
 
-            <img src={props.data.url}/> {/*src={props.data.src ??? */}
+            <img src={props.data.url}/>
 
-        <Details />
+        <Details data={props.data} />
 
         </div>
 
