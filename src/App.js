@@ -14,7 +14,10 @@ function App() { //top level component
 
   let targetdate = "2017-03-25"; //YYYY-MM-DD
 
+  let targetdate2 = "2017-03-26"; //YYYY-MM-DD
+
   const [data, setData] = useState(null);
+  const [data2, setData2] = useState(null);
 
   useEffect(_ =>{
 
@@ -24,11 +27,23 @@ function App() { //top level component
     })
     .catch(err => console.error(err))
 
+    axios.get("https://api.nasa.gov/planetary/apod?api_key=" + currentkey + "&date=" + targetdate2)
+    .then(response => {
+      setData2(response.data)
+    })
+    .catch(err => console.error(err))
+
   },[]);
 
   if(!data){
 
     return <h2>Waiting for data...</h2>
+
+  }
+
+  if(!data2){
+
+    return <h2>Waiting for data 2...</h2>
 
   }
 
@@ -43,6 +58,7 @@ function App() { //top level component
 
     <section id="image-section">
       <Apod data={data}/>
+      <Apod data={data2}/>
     </section>
 
     </div>
