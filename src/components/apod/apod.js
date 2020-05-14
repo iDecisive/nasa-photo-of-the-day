@@ -3,17 +3,19 @@ import "./apod.css";
 
 //Component(s)
 
-import details from "./details/details";
+import Details from "./details/details";
 
-const apod = (data) => {
+const Apod = props => {
 
-    console.log(data)
+    //console.log(data)
 
     return (
         
-        <div class="apod">
+        <div className="apod">
 
-        {details()}
+            <img src={props.data}/> {/*src={props.data.src ??? */}
+
+        <Details />
 
         </div>
 
@@ -21,4 +23,4 @@ const apod = (data) => {
 
 }
 
-export default apod;
+export default Apod;

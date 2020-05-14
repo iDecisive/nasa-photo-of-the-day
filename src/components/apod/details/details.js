@@ -1,7 +1,7 @@
 import React from "react";
 import "./details.css";
 
-function details() {
+const Details = props => {
 
     return (
         
@@ -11,4 +11,4 @@ function details() {
 
 }
 
-export default details;
+export default Details;

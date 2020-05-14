@@ -1,11 +1,11 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 import "./App.css";
 
 
 //Component(s)
 import "./components/apod/apod";
-import apod from "./components/apod/apod";
+import Apod from "./components/apod/apod";
 
 
 function App() { //top level component
@@ -14,17 +14,19 @@ function App() { //top level component
 
   let targetdate = "2017-03-25"; //YYYY-MM-DD
 
-  let getData = (apikey, date) =>{ 
+  const [data, setData] = useState(null);
 
-    return axios.get("https://api.nasa.gov/planetary/apod?api_key=" + apikey + "&date=" + date)
+  useEffect(_ =>{
+
+    axios.get("https://api.nasa.gov/planetary/apod?api_key=" + currentkey + "&date=" + targetdate)
     .then(response => {
-  
-      return response.data;
-
+      setData(response.data)
     })
-  .catch()
-}
+    .catch()
 
+  },[]) 
+
+  console.log(data)
 
   return (
     <div className="App">
@@ -34,7 +36,7 @@ function App() { //top level component
       </p>
 
     <section id="image-section">
-      {apod(getData(currentkey, targetdate))}
+      <Apod data={data}/>
     </section>
 
     </div>
