@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import "./App.css";
+//import "./App.css";
+import styled from 'styled-components';
 
 
 //Component(s)
@@ -49,19 +50,38 @@ function App() { //top level component
 
   console.log(data)
 
+  //Styles using styled-components
+
+  let AppDiv = styled.div`
+  
+  text-align: center;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+
+  `;
+
+  let ImageSection = styled.section`
+  
+  width: 1000px;
+  text-align: left;
+
+  `;
+
+
   return (
-    <div className="App">
+    <AppDiv className="App">
       <p>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun <span role="img" aria-label='go!'>🚀</span>!
       </p>
 
-    <section id="image-section">
+    <ImageSection id="image-section">
       <Apod data={data}/>
       <Apod data={data2}/>
-    </section>
+    </ImageSection>
 
-    </div>
+    </AppDiv>
   );
 }
 
