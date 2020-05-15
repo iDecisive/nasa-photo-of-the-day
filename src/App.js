@@ -58,6 +58,7 @@ function App() { //top level component
   display:flex;
   flex-direction: column;
   align-items: center;
+  color: #ecf0f1;
 
   `;
 
@@ -72,8 +73,7 @@ function App() { //top level component
   return (
     <AppDiv className="App">
       <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
+      Astronomy Picture of the Day <span role="img" aria-label='go!'>🚀</span>!
       </p>
 
     <ImageSection id="image-section">
